@@ -1,0 +1,17 @@
+# Objetivos indicados pelo professor(2º mês)
+# R2 Apresentação - Projeto 3.2 SESA
+
+
+Simular os seguintes dados para o BI:
+
+- **12 tipos de enfermidade**
+- **20 a 25 em cada enfermidade**
+- **Custo de tratamento de cada pessoa por enfermidade**
+- **Tempo de tratamento de cada pessoa na enfermidade**
+- **3 tipos de faixa etária das pessoas cadastradas:**
+  - Idoso (≥60 anos)
+  - Crianças (≤10 anos)
+  - Outros (entre 11 e 59 anos)
+- **Usar 10 cidades distintas**
+
+Os dados devem ser simulados para o interstício de 2 anos em cada cidade.
