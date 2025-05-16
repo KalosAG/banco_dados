@@ -10,13 +10,21 @@ OBJ: Coletar dados, tratar, correlacionar com o banco
 # Instlar bibliotecas 
 
 `pip install folium`
+
 `pip install sqlalchemy`
 
+
+
 `from sqlalchemy import create_engine`
+
 `engine = create_engine('postgresql://username:password@localhost:5432/dbname')`
+
 `with engine.connect() as connection:`
+
     `result = connection.execute("SELECT * FROM your_table")`
+    
     `for row in result:`
+    
         `print(row)`
 
 ## Folium
