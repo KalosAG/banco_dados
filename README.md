@@ -1,7 +1,7 @@
 # banco_dados
 Implementação do banco de dados[Interfaces de programação - 2025.1]
 
-Construção do banco de dados utilizando a biblioteca sqlalchemy coletando os dados públicos da saúde
+Construção do banco de dados utilizando a biblioteca sqlalchemy ou psycopg2 coletando os dados públicos da saúde
 
 OBJ: Coletar dados, tratar, correlacionar com o banco
 
@@ -12,17 +12,30 @@ OBJ: Coletar dados, tratar, correlacionar com o banco
 ````
 pip install folium
 pip install sqlalchemy
+psycopg2
 ````
+Obs: Psycopg2 é uma alternativa(Tem uma sintaxe mais similar a linguagem sql)
 
 2. Criar ambiente postgresql por meio do sqlalchemy
 
 ```
 from sqlalchemy import create_engine
-engine = create_engine('postgresql://username:password@localhost:5432/dbname')
-with engine.connect() as connection:
-    result = connection.execute("SELECT * FROM your_table")
-    for row in result:
-        print(row)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+# Define a conexão (substitua com seus dados reais)
+DATABASE_URL = "postgresql://username:password@localhost:5432/dengue_db"
+engine = create_engine(DATABASE_URL)
+
+# Base para os modelos ORM
+Base = declarative_base()
+
+# Cria as tabelas no banco (se não existirem)
+Base.metadata.create_all(engine)  # Isso só funciona se você definiu modelos ORM antes
+
+# Configura a sessão
+Session = sessionmaker(bind=engine)
+session = Session()
 ```
 
 ## Folium
